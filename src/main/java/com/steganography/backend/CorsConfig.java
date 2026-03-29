@@ -14,7 +14,7 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**")
-                        .allowedOrigins("https://stego-front.onrender.com")
+                        .allowedOrigins("https://stego-backend-production.up.railway.app")
                         .allowedMethods("*")
                         .allowedHeaders("*");
             }

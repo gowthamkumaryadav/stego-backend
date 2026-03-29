@@ -8,7 +8,7 @@ import com.steganography.backend.repository.UserRepository;
 
 @RestController
 @RequestMapping("/auth")
-@CrossOrigin(origins = "https://stego-front.onrender.com")
+@CrossOrigin(origins = "https://stego-backend-production.up.railway.app")
 public class AuthController {
 
     @Autowired

@@ -13,10 +13,12 @@ public class CorsConfig {
         return new WebMvcConfigurer() {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
+
                 registry.addMapping("/**")
-                        .allowedOrigins("https://stego-backend-production.up.railway.app")
-                        .allowedMethods("*")
-                        .allowedHeaders("*");
+                        .allowedOriginPatterns("*")   // 🔥 allows all Vercel URLs
+                        .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+                        .allowedHeaders("*")
+                        .allowCredentials(true);
             }
         };
     }

@@ -21,6 +21,12 @@ public class AuthController {
         repo.save(user);
         return "User registered!";
     }
+    
+    @GetMapping("/")
+    public String home() {
+        System.out.println("🔥 Backend wake-up ping received");
+        return "Backend is running";
+    }
 
     @PostMapping("/login")
     public ResponseEntity<?> login(@RequestBody User user) {

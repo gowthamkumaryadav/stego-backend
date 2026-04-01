@@ -59,4 +59,18 @@ public class AuthController {
             return ResponseEntity.status(500).body("Server error");
         }
     }
+    
+    @PostMapping("/google")
+    public ResponseEntity<?> googleLogin(@RequestBody User user) {
+        User existingUser = repo.findByUsername(user.getUsername());
+
+        if (existingUser == null) {
+            repo.save(user);
+            System.out.println("✅ Google user registered");
+        } else {
+            System.out.println("✅ Google user already exists");
+        }
+
+        return ResponseEntity.ok("Google login success");
+    }
 }
